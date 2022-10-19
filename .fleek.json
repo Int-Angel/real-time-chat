@@ -1,0 +1,9 @@
+{
+    "build": {
+      "image": "node:16.16.0",
+      "command": "yarn && yarn build && echo $SOME_ENV",
+      "environment": {
+        "SOME_ENV": "Build finished!"
+      }
+    }
+   }
