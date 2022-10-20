@@ -1,8 +1,11 @@
 $text-light-color: #8da4f1;
+$text-white-color: #ddddf7;
 $text-dark-color: #5d5b8d;
 $text-gray-color: rgb(175,175,175);
 $background-color: #7b96ec;
 $button-color: #7b96ec;
+$dark-background-color: #3e3c61;
+$darker-background-color: #2f2d52;
 
 .formContainer{
     background-color: $background-color;
@@ -75,6 +78,123 @@ $button-color: #7b96ec;
         .title{
             color: $text-dark-color;
             font-size: 12px;
+        }
+    }
+}
+
+.home{
+    background-color: $background-color;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .container{
+        border-radius: 10px;
+        width: 65%;
+        height: 80%;
+
+        display: flex;
+        overflow: hidden;
+
+        .sidebar{
+            flex:1;
+            background-color: $dark-background-color;
+
+            .navbar{
+                display: flex;
+                align-items: center;
+                background-color: $darker-background-color;
+
+                height: 50px;
+                padding: 10px;
+                justify-content: space-between;
+
+                color: $text-white-color;
+
+                .logo{
+                    font-weight: bold;
+                    font-size: 24px;
+                }
+
+                .user{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    img{
+                        background-color: #8da4f1;
+                        height: 24px;
+                        width: 24px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+
+                    button{
+                        background-color: $dark-background-color;
+                        color: $text-white-color;
+                        font-size: 10px;
+                        padding: 10px;
+                        font-weight: bold;
+                        border: none;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .search{
+                border-bottom: 1px solid gray;
+
+                .searchForm{
+                    padding: 10px;
+                    input{
+                        background-color: transparent;
+                        border: none;
+                        color: white;
+                        outline: none;
+
+                        &::placeholder{
+                            color: lightgray;
+                        }
+                    }
+                }
+            }
+
+            .userChat{
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                
+                cursor: pointer;
+                color: white;
+
+                &:hover{
+                    background-color: $darker-background-color;
+                }
+
+                img{
+                    height: 50px;
+                    width: 50px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+
+                .userChatInfo{
+                    span{
+                        font-size: 18px;
+                        font-weight: 500;
+                    }
+                    p{
+                        font-size: 14px;
+                        color: lightgray;
+                    }
+                }
+            }
+        }
+
+        .chat{
+            flex:2;
         }
     }
 }
