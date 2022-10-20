@@ -1,5 +1,11 @@
+$text-light-color: #8da4f1;
+$text-dark-color: #5d5b8d;
+$text-gray-color: rgb(175,175,175);
+$background-color: #7b96ec;
+$button-color: #7b96ec;
+
 .formContainer{
-    background-color: #a7bcff;
+    background-color: $background-color;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -7,11 +13,68 @@
 
     .formWrapper{
         background-color: white;
-        padding: 40px ;
+        padding: 40px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+
+        filter: drop-shadow(16px 16px 10px rgba(0, 0, 0, 0.108));
+
         form{
             display: flex;
             flex-direction: column;
             gap: 15px;
+
+            input{
+                padding: 15px;
+                border: none;
+                width: 250px;
+                border-bottom: 1px solid $text-gray-color;
+                &::placeholder{
+                    color: rgb(175, 175, 175);
+                }
+            }
+
+            button{
+                background-color: $button-color;
+                color: white;
+                padding: 10px;
+                font-weight: bold;
+                border: none;
+                cursor: pointer;
+            }
+
+            label{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: $text-light-color;
+                font-size: 12px;
+                cursor: pointer;
+
+                img{
+                    width: 32px;
+                }
+            }
+        }
+
+        p{
+            color: $text-dark-color;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+
+        .logo{
+            color: $text-dark-color;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .title{
+            color: $text-dark-color;
+            font-size: 12px;
         }
     }
 }
