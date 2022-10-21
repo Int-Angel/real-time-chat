@@ -7,6 +7,24 @@ $button-color: #7b96ec;
 $dark-background-color: #3e3c61;
 $darker-background-color: #2f2d52;
 
+@mixin mobile {
+    @media screen and (max-width:480px){
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width:768px){
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media screen and (max-width:1200px){
+        @content;
+    }
+}
+
 .formContainer{
     background-color: $background-color;
     height: 100vh;
@@ -96,10 +114,14 @@ $darker-background-color: #2f2d52;
 
         display: flex;
         overflow: hidden;
+        @include tablet{
+            width: 90%;
+        }
 
         .sidebar{
             flex:1;
             background-color: $dark-background-color;
+            position: relative;
 
             .navbar{
                 display: flex;
@@ -115,6 +137,9 @@ $darker-background-color: #2f2d52;
                 .logo{
                     font-weight: bold;
                     font-size: 24px;
+                    @include tablet{
+                        display: none;
+                    }
                 }
 
                 .user{
@@ -138,6 +163,10 @@ $darker-background-color: #2f2d52;
                         font-weight: bold;
                         border: none;
                         cursor: pointer;
+                        @include tablet{
+                            position: absolute;
+                            bottom: 10px;
+                        }
                     }
                 }
             }
